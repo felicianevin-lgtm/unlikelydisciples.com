@@ -126,6 +126,10 @@
             color:var(--cream);font-size:16.5px}
   ol.tracks li{margin:5px 0;break-inside:avoid;border-bottom:1px dotted rgba(201,165,102,.22);
                padding-bottom:5px}
+  ol.tracks a{color:var(--cream)}
+  ol.tracks a:hover{color:var(--tan)}
+  ol.tracks a::after{content:" →";color:var(--tan);font-size:13px;opacity:0;transition:opacity .15s}
+  ol.tracks a:hover::after{opacity:1}
   .single{margin-top:26px;padding:22px 26px;border:1px solid var(--line);border-radius:12px;
           display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;background:rgba(201,165,102,.05)}
   .single b{font-size:19px;letter-spacing:.03em}
@@ -186,28 +190,30 @@
     <div class="album">
       <h3>I&nbsp;ASKED&nbsp;GOD</h3>
       <p class="sub">The debut album — honest prayers about the fear, the heartache, the silence, the scars. Every one lands on <em>greater is He</em>. Released July 2026.</p>
+      <p class="sub" style="margin-bottom:14px">Tap any track for the full lyrics, the scripture
+         it's built on, and the story to read when you're in it.</p>
       <ol class="tracks">
-        <li>The Room</li>
-        <li>The Silence</li>
-        <li>The Doubt</li>
-        <li>The Fear</li>
-        <li>The Comparison</li>
-        <li>The Shame</li>
-        <li>The Lonely</li>
-        <li>The Scars</li>
-        <li>The Injustice</li>
-        <li>The Weary</li>
-        <li>The Burden</li>
-        <li>The Wait</li>
-        <li>The Detour</li>
-        <li>The Lie</li>
-        <li>The Provision</li>
-        <li>The Grudge</li>
-        <li>The Way</li>
-        <li>The Victory</li>
-        <li>Here I Am, Send Me</li>
-        <li>The Battle</li>
-        <li>Here I Am, Send Me (Amen)</li>
+        <li><a href="/songs/the-room/">The Room</a></li>
+        <li><a href="/songs/the-silence/">The Silence</a></li>
+        <li><a href="/songs/the-doubt/">The Doubt</a></li>
+        <li><a href="/songs/the-fear/">The Fear</a></li>
+        <li><a href="/songs/the-comparison/">The Comparison</a></li>
+        <li><a href="/songs/the-shame/">The Shame</a></li>
+        <li><a href="/songs/the-lonely/">The Lonely</a></li>
+        <li><a href="/songs/the-scars/">The Scars</a></li>
+        <li><a href="/songs/the-injustice/">The Injustice</a></li>
+        <li><a href="/songs/the-weary/">The Weary</a></li>
+        <li><a href="/songs/the-burden/">The Burden</a></li>
+        <li><a href="/songs/the-wait/">The Wait</a></li>
+        <li><a href="/songs/the-detour/">The Detour</a></li>
+        <li><a href="/songs/the-lie/">The Lie</a></li>
+        <li><a href="/songs/the-provision/">The Provision</a></li>
+        <li><a href="/songs/the-grudge/">The Grudge</a></li>
+        <li><a href="/songs/the-way/">The Way</a></li>
+        <li><a href="/songs/the-victory/">The Victory</a></li>
+        <li><a href="/songs/here-i-am-send-me/">Here I Am, Send Me</a></li>
+        <li><a href="/songs/the-battle/">The Battle</a></li>
+        <li><a href="/songs/here-i-am-send-me/">Here I Am, Send Me (Amen)</a></li>
       </ol>
       <p style="margin-top:26px">
         <a class="btn solid" href="https://open.spotify.com/artist/6m4PTBdr6xbj1UhzjDAZkk">Listen on Spotify</a>

@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://unlikelydisciples.com/</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://unlikelydisciples.com/</loc><lastmod>2026-07-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-room/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-silence/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-doubt/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-fear/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-comparison/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-shame/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-lonely/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-scars/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-injustice/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-weary/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-burden/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-wait/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-detour/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-lie/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-provision/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-grudge/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-way/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-victory/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/here-i-am-send-me/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://unlikelydisciples.com/songs/the-battle/</loc><lastmod>2026-07-13</lastmod><priority>0.8</priority></url>
 </urlset>
