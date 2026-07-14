@@ -67,6 +67,17 @@ h2{font-family:Arial,helvetica,sans-serif;font-weight:900;letter-spacing:.2em;
 .btn.solid{background:var(--tan);color:var(--ink)}
 .btn.solid:hover{background:var(--cream);border-color:var(--cream)}
 
+.song-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:16px;padding:26px 0 70px}
+.song-card{display:block;background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:20px 22px;transition:border-color .2s,transform .15s}
+.song-card:hover{border-color:var(--tan);transform:translateY(-2px)}
+.song-card .num{font-family:Arial,helvetica,sans-serif;font-size:12px;
+  letter-spacing:.2em;color:var(--tan)}
+.song-card .t{display:block;color:var(--cream);font-size:21px;font-weight:bold;
+  margin:4px 0 6px}
+.song-card .e{display:block;color:var(--muted);font-style:italic;font-size:15px}
+
 .prevnext{display:flex;justify-content:space-between;align-items:center;
   border-top:1px solid rgba(201,165,102,.18);padding:26px 24px 8px;gap:16px}
 .prevnext a{font-family:Arial,helvetica,sans-serif;font-size:13.5px;

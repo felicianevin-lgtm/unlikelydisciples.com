@@ -278,6 +278,7 @@ PAGE = """<!DOCTYPE html>
   <a class="name" href="/">UNLIKELY&nbsp;DISCIPLES</a>
   <span class="links">
     <a href="/#music">Music</a>
+    <a href="/songs/">Beyond the Song</a>
     <a href="/#about">About</a>
     <a href="/#follow">Follow</a>
   </span>
@@ -322,7 +323,7 @@ PAGE = """<!DOCTYPE html>
 
 <nav class="prevnext wrap" aria-label="Album navigation">
   {prev_html}
-  <a class="mid" href="/#music">All songs</a>
+  <a class="mid" href="/songs/">All songs</a>
   {next_html}
 </nav>
 
@@ -356,6 +357,75 @@ def jsonld(s):
                  "item": BASE_URL + "/#music"},
                 {"@type": "ListItem", "position": 3, "name": s["title"]}]}
         ]}, indent=1)
+
+INDEX = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beyond the Song — Lyrics, Scripture &amp; Stories | Unlikely Disciples</title>
+<meta name="description" content="Every song on I Asked God by Unlikely Disciples — full lyrics, the scripture each song is built on, and the Bible story to read when you're in that prayer.">
+<link rel="canonical" href="{base}/songs/">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Unlikely Disciples">
+<meta property="og:title" content="Beyond the Song — Unlikely Disciples">
+<meta property="og:description" content="Lyrics, scripture, and the story behind every song on I Asked God.">
+<meta property="og:url" content="{base}/songs/">
+<meta property="og:image" content="{base}/assets/ud-og-1200x630.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<nav aria-label="Site">
+  <a href="/"><img src="/assets/apple-touch-icon.png" alt="Unlikely Disciples logo" width="38" height="38"></a>
+  <a class="name" href="/">UNLIKELY&nbsp;DISCIPLES</a>
+  <span class="links">
+    <a href="/#music">Music</a>
+    <a href="/songs/">Beyond the Song</a>
+    <a href="/#about">About</a>
+    <a href="/#follow">Follow</a>
+  </span>
+</nav>
+
+<header class="song-head">
+  <div class="wrap">
+    <p class="kicker">I Asked God · The Album</p>
+    <h1>Beyond the Song</h1>
+    <div class="rule"></div>
+    <p class="emotion">Every track started as a prayer. Find the one you're praying —
+       the lyrics, the scripture it's built on, and the story to sit with.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="song-cards">
+{cards}
+  </div>
+</main>
+
+<footer>
+  <p class="fname">Unlikely Disciples</p>
+  <p>© 2026 Unlikely Disciples · unlikelydisciples.com · Welcome, unlikely disciple.</p>
+</footer>
+
+</body>
+</html>
+"""
+
+def build_index():
+    cards = []
+    for s in SONGS:
+        cards.append(
+            f'    <a class="song-card" href="/songs/{s["slug"]}/">'
+            f'<span class="num">{s["num"]:02d}</span>'
+            f'<span class="t">{esc(s["title"])}</span>'
+            f'<span class="e">{esc(s["emotion"])}</span></a>')
+    with open(os.path.join(SITE, "songs", "index.html"), "w", encoding="utf-8") as f:
+        f.write(INDEX.format(base=BASE_URL, cards="\n".join(cards)))
+    print("built songs/ index")
 
 def build():
     cache = json.load(open(CACHE, encoding="utf-8")) if os.path.exists(CACHE) else {}
@@ -397,10 +467,13 @@ def build():
             f.write(html)
         print(f"built songs/{s['slug']}/  ({len(stanzas)} stanzas, {len(s['verses'])} passages)")
     json.dump(cache, open(CACHE, "w", encoding="utf-8"), indent=0)
+    build_index()
     # sitemap
     today = "2026-07-13"
     urls = [f"  <url><loc>{BASE_URL}/</loc><lastmod>{today}</lastmod>"
-            "<changefreq>weekly</changefreq><priority>1.0</priority></url>"]
+            "<changefreq>weekly</changefreq><priority>1.0</priority></url>",
+            f"  <url><loc>{BASE_URL}/songs/</loc><lastmod>{today}</lastmod>"
+            "<priority>0.9</priority></url>"]
     urls += [f"  <url><loc>{BASE_URL}/songs/{s['slug']}/</loc>"
              f"<lastmod>{today}</lastmod><priority>0.8</priority></url>"
              for s in SONGS]
@@ -408,7 +481,7 @@ def build():
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n'
                 '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                 + "\n".join(urls) + "\n</urlset>\n")
-    print(f"sitemap.xml -> {1 + len(SONGS)} urls")
+    print(f"sitemap.xml -> {2 + len(SONGS)} urls")
 
 if __name__ == "__main__":
     build()
