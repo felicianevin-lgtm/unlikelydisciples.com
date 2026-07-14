@@ -14,6 +14,7 @@ LYRICS = r"C:\Users\felic\Desktop\I-Asked-God-Reels\Lyrics\official"
 CACHE = os.path.join(SITE, "verses_cache.json")
 BASE_URL = "https://unlikelydisciples.com"
 ALBUM_URL = "https://open.spotify.com/album/1CTKORudh8Wxa9dFV72d2O"
+AMAZON_URL = "https://music.amazon.com/albums/B0H8MG1KD4"
 AMEN_ID = "57dtdUFcIehfMEkkb5LBPz"   # Here I Am, Send Me (Amen) — track 21
 SPOTIFY = {  # slug -> Spotify track id (pulled from the album embed 7/13)
  "the-room": "5e92YkuVPtkmHjGqNHOBUS", "the-silence": "4z8wRRfwOus0Q180FmYfTA",
@@ -316,6 +317,7 @@ PAGE = """<!DOCTYPE html>
       <h2>Listen</h2>
       {embed_html}
       <p><a class="btn solid" href="https://open.spotify.com/track/{spotify_id}">Open in Spotify</a>
+      <a class="btn" href="{amazon_url}">Amazon Music</a>
       <a class="btn" href="{album_url}">Full Album</a></p>
     </section>
   </aside>
@@ -347,7 +349,7 @@ def jsonld(s):
              "byArtist": {"@type": "MusicGroup", "name": "Unlikely Disciples",
                           "url": BASE_URL + "/"},
              "inAlbum": {"@type": "MusicAlbum", "name": "I Asked God",
-                         "url": ALBUM_URL,
+                         "url": ALBUM_URL, "sameAs": [AMAZON_URL],
                          "byArtist": {"@type": "MusicGroup", "name": "Unlikely Disciples"}},
              "position": s["num"]},
             {"@type": "BreadcrumbList", "itemListElement": [
@@ -455,6 +457,7 @@ def build():
                      sp_embed(AMEN_ID, "Here I Am, Send Me (Amen)")
         html = PAGE.format(
             embed_html=embed, spotify_id=SPOTIFY[s["slug"]], album_url=ALBUM_URL,
+            amazon_url=AMAZON_URL,
             base=BASE_URL, slug=s["slug"], num=s["num"], title=esc(s["title"]),
             emotion=esc(s["emotion"]), emotion_lc=esc(s["emotion"][0].lower() + s["emotion"][1:]),
             jsonld=jsonld(s), lyrics_html=lyr, verses_html="\n".join(verses),
