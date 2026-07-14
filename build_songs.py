@@ -13,6 +13,27 @@ SITE = os.path.dirname(os.path.abspath(__file__))
 LYRICS = r"C:\Users\felic\Desktop\I-Asked-God-Reels\Lyrics\official"
 CACHE = os.path.join(SITE, "verses_cache.json")
 BASE_URL = "https://unlikelydisciples.com"
+ALBUM_URL = "https://open.spotify.com/album/1CTKORudh8Wxa9dFV72d2O"
+AMEN_ID = "57dtdUFcIehfMEkkb5LBPz"   # Here I Am, Send Me (Amen) — track 21
+SPOTIFY = {  # slug -> Spotify track id (pulled from the album embed 7/13)
+ "the-room": "5e92YkuVPtkmHjGqNHOBUS", "the-silence": "4z8wRRfwOus0Q180FmYfTA",
+ "the-doubt": "6Se7nYdnZHjAydmlA7Eu5r", "the-fear": "3tSs55JT4nCz3sIl9E0knv",
+ "the-comparison": "5F13oF23ZexsVDvgt25ruV", "the-shame": "6Uq7VQ1iiJm9yLOQN38rDC",
+ "the-lonely": "6eFcG4yz7bI5eLB8F2r3TX", "the-scars": "1Xr3pjl1uZP7bWi1O6C5Uc",
+ "the-injustice": "3auo0E5P4xnT6YTjSYmtYe", "the-weary": "0MoKpONArpGLEyrptd1kUZ",
+ "the-burden": "3l2cMcf4fQ4hQBQTsktewr", "the-wait": "1tyu6W3urqjLIduj3fXKsY",
+ "the-detour": "1xY8l5txlu1TITiGS6o3pE", "the-lie": "3kgp2EH3G0nLqx4rxlqgss",
+ "the-provision": "11EoukugfrVpndDW2TsoVT", "the-grudge": "3Y5OQqyydOAhWqs6WRBSwt",
+ "the-way": "5AMmR3eBaSS8XBBnBFYHFs", "the-victory": "6jqVKHV16YcQTQfPsrOKLW",
+ "here-i-am-send-me": "4YT9rzAp4cg3YLjUcQpPQh", "the-battle": "1hJF5EPr49fzVsUs5ZoUTf",
+}
+
+def sp_embed(track_id, title):
+    return (f'<iframe style="border-radius:12px" '
+            f'src="https://open.spotify.com/embed/track/{track_id}?theme=0" '
+            f'width="100%" height="152" frameborder="0" '
+            f'allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" '
+            f'loading="lazy" title="Play {title} on Spotify"></iframe>')
 
 #            slug, track#, title, lyrics tag, emotion line
 SONGS = [
@@ -291,8 +312,10 @@ PAGE = """<!DOCTYPE html>
       <p>{story_why}</p>
     </section>
     <section class="listen">
-      <a class="btn solid" href="https://open.spotify.com/artist/6m4PTBdr6xbj1UhzjDAZkk">Listen on Spotify</a>
-      <a class="btn" href="https://www.youtube.com/@unlikelydisciples">YouTube</a>
+      <h2>Listen</h2>
+      {embed_html}
+      <p><a class="btn solid" href="https://open.spotify.com/track/{spotify_id}">Open in Spotify</a>
+      <a class="btn" href="{album_url}">Full Album</a></p>
     </section>
   </aside>
 </main>
@@ -319,9 +342,11 @@ def jsonld(s):
         "@graph": [
             {"@type": "MusicRecording", "name": s["title"],
              "url": f"{BASE_URL}/songs/{s['slug']}/",
+             "sameAs": "https://open.spotify.com/track/" + SPOTIFY[s["slug"]],
              "byArtist": {"@type": "MusicGroup", "name": "Unlikely Disciples",
                           "url": BASE_URL + "/"},
              "inAlbum": {"@type": "MusicAlbum", "name": "I Asked God",
+                         "url": ALBUM_URL,
                          "byArtist": {"@type": "MusicGroup", "name": "Unlikely Disciples"}},
              "position": s["num"]},
             {"@type": "BreadcrumbList", "itemListElement": [
@@ -354,7 +379,12 @@ def build():
                      if next_s else "<span class='side'></span>")
         note_html = (f"<p class='tracknote'>{esc(s['note'])}</p>" if s.get("note") else "")
         st_title, st_ref, st_why = s["story"]
+        embed = sp_embed(SPOTIFY[s["slug"]], esc(s["title"]))
+        if s["slug"] == "here-i-am-send-me":
+            embed += "\n      <p class='reprise-label'>The (Amen) reprise — track 21:</p>\n      " + \
+                     sp_embed(AMEN_ID, "Here I Am, Send Me (Amen)")
         html = PAGE.format(
+            embed_html=embed, spotify_id=SPOTIFY[s["slug"]], album_url=ALBUM_URL,
             base=BASE_URL, slug=s["slug"], num=s["num"], title=esc(s["title"]),
             emotion=esc(s["emotion"]), emotion_lc=esc(s["emotion"][0].lower() + s["emotion"][1:]),
             jsonld=jsonld(s), lyrics_html=lyr, verses_html="\n".join(verses),

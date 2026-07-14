@@ -56,6 +56,9 @@ h2{font-family:Arial,helvetica,sans-serif;font-weight:900;letter-spacing:.2em;
 .story p{font-size:16.5px}
 
 .listen{margin-top:40px}
+.listen iframe{margin-bottom:12px}
+.listen p{margin-top:6px}
+.reprise-label{color:var(--muted);font-style:italic;font-size:14.5px;margin:2px 0 8px}
 .btn{display:inline-block;border:1.5px solid var(--tan);color:var(--tan);
      padding:11px 26px;border-radius:999px;font-size:14px;letter-spacing:.16em;
      text-transform:uppercase;font-family:Arial,helvetica,sans-serif;font-weight:bold;
