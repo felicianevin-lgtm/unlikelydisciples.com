@@ -294,7 +294,7 @@ home_body = f'''
       </ul>
     </div>
     <div class="hero-art">
-      {HERO_SVG}
+      <div class="hero-photo"><img src="assets/photos/hero-navy-chiffon.jpg" alt="Gift wrapped in navy paper with a navy satin and pale blue chiffon bow by All Wrapped Up" width="1105" height="1383"></div>
       <div class="hero-badge"><strong>Now booking</strong>Holiday 2026 orders</div>
     </div>
   </div>
@@ -355,18 +355,22 @@ home_body = f'''
 
 <section>
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">Portfolio</span><h2>Styles for every occasion</h2><p>From the signature pink polka dot to understated black and gold for corporate clients.</p></div>
+    <div class="section-head reveal"><span class="kicker">Recent work</span><h2>Styles for every occasion</h2><p>Playful or polished, every gift gets real ribbon, a hand-tied bow and a finishing detail chosen for the recipient.</p></div>
     <div class="gallery">
-      <figure class="gift-tile reveal" style="background:#fde4ee">{gift_svg("#fff","#e5648f","#fff","#b23a5e","#fde4ee")}<figcaption>Signature pink &amp; polka dot</figcaption></figure>
-      <figure class="gift-tile reveal" style="background:#2b2224">{gift_svg("#3d3033","#c9a227","#f0dfa3","#e8c65a","#2b2224")}<figcaption>Corporate black &amp; gold</figcaption></figure>
-      <figure class="gift-tile reveal" style="background:#e9efe6">{gift_svg("#fff","#8fae8b","#fff","#5d7a5a","#f4f7f2")}<figcaption>Wedding sage &amp; ivory</figcaption></figure>
-      <figure class="gift-tile reveal" style="background:#fbe6e6">{gift_svg("#c62f3b","#fff","#c62f3b","#2e6b3d","#fbe6e6")}<figcaption>Classic Christmas</figcaption></figure>
-      <figure class="gift-tile reveal" style="background:#e4eef8">{gift_svg("#fff","#7fa9d8","#fff","#3b6ea8","#eef4fb")}<figcaption>Baby shower blue</figcaption></figure>
-      <figure class="gift-tile reveal" style="background:#f3e8f7">{gift_svg("#fff","#b389c9","#fff","#7a4a96","#f8f1fb")}<figcaption>Bridal lavender</figcaption></figure>
-      <figure class="gift-tile reveal" style="background:#fff2e0">{gift_svg("#fff","#f0a640","#fff","#c9772a","#fff7ea")}<figcaption>Birthday brights</figcaption></figure>
-      <figure class="gift-tile reveal" style="background:#e6eef5">{gift_svg("#1f3a5f","#fff","#1f3a5f","#c9a227","#e6eef5")}<figcaption>Navy &amp; gold client gifts</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-rainbow-box.jpg" alt="Large box in watercolor-dot paper with aqua and confetti ribbon" width="900" height="900" loading="lazy"><figcaption>Watercolor dots, layered ribbon</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-hannah-check.jpg" alt="Buffalo check gift with black yarn, burlap ribbon and Scrabble-tile name tag" width="900" height="900" loading="lazy"><figcaption>Personalized name tags</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-christmas-gold.jpg" alt="Christmas tree paper with gold mesh and red glitter bow" width="900" height="900" loading="lazy"><figcaption>Gold mesh and glitter bow</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-western-rose.jpg" alt="Coral western paper with brown stitched ribbon and a pink fabric rose" width="900" height="900" loading="lazy"><figcaption>Fabric rose finish</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-flamingo.jpg" alt="Flamingo box with pink and orange tulle bow" width="900" height="900" loading="lazy"><figcaption>Tulle and satin</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-dad-shirt.jpg" alt="Gift wrapped to look like a striped collared shirt with buttons and a bow tie" width="900" height="900" loading="lazy"><figcaption>Shirt-and-tie wrap for Dad</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-purple-organza.jpg" alt="Purple snowflake paper with silver-edged organza bow" width="900" height="900" loading="lazy"><figcaption>Wired organza bow</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-pompom-stack.jpg" alt="Two stacked boxes in red Happy Holidays paper with a pom-pom garland" width="900" height="900" loading="lazy"><figcaption>Pom-pom garland stack</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-nutcracker.jpg" alt="Nutcracker print paper with sage green glitter ribbon" width="900" height="900" loading="lazy"><figcaption>Nutcracker print, sage ribbon</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-bee-stack.jpg" alt="Two-tier stacked gift in bumblebee paper with buffalo check ribbon" width="900" height="900" loading="lazy"><figcaption>Stacked two-tier wrap</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-snowflake-cube.jpg" alt="Oversized cube gift in purple snowflake paper with silver organza bow and snowflake" width="900" height="900" loading="lazy"><figcaption>Oversized, finished in silver</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-paisley.jpg" alt="Teal paisley paper with pink and blue curling ribbon and a script Happy Birthday topper" width="900" height="900" loading="lazy"><figcaption>Script birthday topper</figcaption></figure>
     </div>
-    <p class="fineprint" style="text-align:center">Photographs of recent orders are available on request.</p>
+    <p class="fineprint" style="text-align:center">All photographs are of real orders wrapped in the Sweetwater studio.</p>
   </div>
 </section>
 
@@ -413,9 +417,15 @@ corp_body = page_head("Corporate gift wrapping", "Corporate gift wrapping for ho
         <div class="stat"><b>1</b><span>invoice, W-9 on request</span></div>
         <div class="stat"><b>5</b><span>business-day standard turnaround</span></div>
       </div>
+      <figure class="photo-card reveal"><img src="assets/photos/corp-purple-set.jpg" alt="Three coordinated gifts in purple snowflake paper with silver ribbon and matching tags" width="1400" height="933" loading="lazy"><figcaption>One palette, three sizes, matching tags: a coordinated set for a client list.</figcaption></figure>
       <div class="callout"><span class="h">Branded presentation</span><p>Send your logo and brand colors. We source ribbon to match and print custom gift tags so every gift reads as yours.</p></div>
     </div>
   </div>
+</section>
+
+<section class="banner">
+  <img src="assets/photos/wide-holiday-display.jpg" alt="A table full of coordinated holiday gifts in candy-stripe and chalkboard papers with tulle-wrapped towers" width="1800" height="771" loading="lazy">
+  <div class="wrap banner-text reveal"><span class="kicker">Volume orders</span><h2>Dozens of gifts, one cohesive look</h2><p>Coordinated papers, ribbons and tags across an entire order, delivered sorted and ready to hand out.</p></div>
 </section>
 
 <section class="alt">
@@ -479,12 +489,12 @@ services_body = page_head("Occasions", "Gift wrapping for weddings, showers, bir
 <section>
   <div class="wrap">
     <div class="occasions">
-      <div class="occasion reveal" id="weddings"><div class="icon">{ICONS['heart']}</div><h3>Weddings</h3><p>Bridesmaid and groomsmen gifts, parent gifts, welcome bags for out-of-town guests and the gift you're bringing to someone else's big day.</p><ul><li>Ribbon matched to your wedding palette</li><li>Welcome-bag assembly and tagging</li><li>Delivery to the venue or hotel block</li></ul></div>
-      <div class="occasion reveal" id="bridal-showers"><div class="icon">{ICONS['sparkle']}</div><h3>Bridal showers</h3><p>Host gifts, favors and shower gifts wrapped to match the theme, so the gift table looks styled and photographs beautifully.</p><ul><li>Favor wrapping in bulk</li><li>Coordinated gift-table display</li><li>Registry gifts received and wrapped for you</li></ul></div>
-      <div class="occasion reveal" id="baby-showers"><div class="icon">{ICONS['gift']}</div><h3>Baby showers</h3><p>Large boxes, unusual shapes and the smallest keepsakes, wrapped in soft palettes or the nursery colors the parents have chosen.</p><ul><li>Oversized item specialists</li><li>Gender-reveal wrapping handled discreetly</li><li>Diaper cakes and gift baskets finished</li></ul></div>
-      <div class="occasion reveal" id="birthdays"><div class="icon">{ICONS['star']}</div><h3>Birthdays</h3><p>Milestone birthdays, children's parties and surprise gifts. Bright and playful or quietly elegant, wrapped to suit the recipient.</p><ul><li>Durable wrapping that travels well</li><li>Themed paper and ribbon</li><li>Same-week turnaround when available</li></ul></div>
-      <div class="occasion reveal" id="anniversaries"><div class="icon">{ICONS['heart']}</div><h3>Anniversaries</h3><p>Luxury paper, double-satin ribbon and a handwritten card, finished well ahead of the date.</p><ul><li>Luxury finishes and embellishments</li><li>Handwritten note cards</li><li>Discreet pickup and delivery</li></ul></div>
-      <div class="occasion reveal" id="holidays"><div class="icon">{ICONS['calendar']}</div><h3>Holidays</h3><p>Christmas, Hanukkah, Valentine's Day, Mother's and Father's Day, Easter and graduation. Seasonal palettes or your own family tradition.</p><ul><li>Whole-family Christmas packages</li><li>Santa paper kept separate</li><li><a href="holiday-gift-wrapping.html">See holiday packages →</a></li></ul></div>
+      <div class="occasion reveal" id="weddings"><img src="assets/photos/sq-wedding-navy.jpg" alt="Navy gift with navy satin and pale blue chiffon bow" width="900" height="900" loading="lazy"><div class="icon">{ICONS['heart']}</div><h3>Weddings</h3><p>Bridesmaid and groomsmen gifts, parent gifts, welcome bags for out-of-town guests and the gift you're bringing to someone else's big day.</p><ul><li>Ribbon matched to your wedding palette</li><li>Welcome-bag assembly and tagging</li><li>Delivery to the venue or hotel block</li></ul></div>
+      <div class="occasion reveal" id="bridal-showers"><img src="assets/photos/sq-bridal-dots.jpg" alt="Watercolor-dot paper with aqua and confetti ribbon bow" width="900" height="900" loading="lazy"><div class="icon">{ICONS['sparkle']}</div><h3>Bridal showers</h3><p>Host gifts, favors and shower gifts wrapped to match the theme, so the gift table looks styled and photographs beautifully.</p><ul><li>Favor wrapping in bulk</li><li>Coordinated gift-table display</li><li>Registry gifts received and wrapped for you</li></ul></div>
+      <div class="occasion reveal" id="baby-showers"><img src="assets/photos/sq-baby-shower.jpg" alt="Three baby shower gifts in jungle-animal paper with raffia, gold and purple bows" width="900" height="900" loading="lazy"><div class="icon">{ICONS['gift']}</div><h3>Baby showers</h3><p>Large boxes, unusual shapes and the smallest keepsakes, wrapped in soft palettes or the nursery colors the parents have chosen.</p><ul><li>Oversized item specialists</li><li>Gender-reveal wrapping handled discreetly</li><li>Diaper cakes and gift baskets finished</li></ul></div>
+      <div class="occasion reveal" id="birthdays"><img src="assets/photos/sq-paisley.jpg" alt="Teal paisley birthday gift with curling ribbon and script topper" width="900" height="900" loading="lazy"><div class="icon">{ICONS['star']}</div><h3>Birthdays</h3><p>Milestone birthdays, children's parties and surprise gifts. Bright and playful or quietly elegant, wrapped to suit the recipient.</p><ul><li>Durable wrapping that travels well</li><li>Themed paper and ribbon</li><li>Same-week turnaround when available</li></ul></div>
+      <div class="occasion reveal" id="anniversaries"><img src="assets/photos/sq-western-rose.jpg" alt="Coral paper with stitched brown ribbon and a fabric rose" width="900" height="900" loading="lazy"><div class="icon">{ICONS['heart']}</div><h3>Anniversaries</h3><p>Luxury paper, double-satin ribbon and a handwritten card, finished well ahead of the date.</p><ul><li>Luxury finishes and embellishments</li><li>Handwritten note cards</li><li>Discreet pickup and delivery</li></ul></div>
+      <div class="occasion reveal" id="holidays"><img src="assets/photos/sq-christmas-gold.jpg" alt="Christmas tree paper with gold mesh and red glitter bow" width="900" height="900" loading="lazy"><div class="icon">{ICONS['calendar']}</div><h3>Holidays</h3><p>Christmas, Hanukkah, Valentine's Day, Mother's and Father's Day, Easter and graduation. Seasonal palettes or your own family tradition.</p><ul><li>Whole-family Christmas packages</li><li>Santa paper kept separate</li><li><a href="holiday-gift-wrapping.html">See holiday packages →</a></li></ul></div>
     </div>
   </div>
 </section>
@@ -614,6 +624,11 @@ holiday_body = page_head("Holiday gift wrapping", "Christmas &amp; holiday gift 
   </div>
 </section>
 
+<section class="banner">
+  <img src="assets/photos/wide-holiday-display.jpg" alt="A table full of coordinated holiday gifts in candy-stripe and chalkboard papers with tulle-wrapped towers" width="1800" height="771" loading="lazy">
+  <div class="wrap banner-text reveal"><span class="kicker">Recent holiday work</span><h2>A whole family's Christmas, wrapped and sorted</h2></div>
+</section>
+
 <section class="alt">
   <div class="wrap two-col">
     <div class="reveal">
@@ -653,6 +668,22 @@ holiday_body = page_head("Holiday gift wrapping", "Christmas &amp; holiday gift 
 
 <section class="alt">
   <div class="wrap">
+    <div class="section-head reveal"><span class="kicker">Holiday portfolio</span><h2>From the studio, December after December</h2></div>
+    <div class="gallery">
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-christmas-gold.jpg" alt="Christmas tree paper with gold mesh and red glitter bow" width="900" height="900" loading="lazy"><figcaption>Gold mesh, red glitter</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-trees-burlap.jpg" alt="Christmas tree paper with copper burlap ribbon and gold curls" width="900" height="900" loading="lazy"><figcaption>Burlap and copper curls</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-special-delivery.jpg" alt="North Pole special delivery box with emerald satin bow" width="900" height="900" loading="lazy"><figcaption>North Pole special delivery</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-pompom-stack.jpg" alt="Two stacked boxes in red Happy Holidays paper with a pom-pom garland" width="900" height="900" loading="lazy"><figcaption>Pom-pom garland stack</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-snowflake-cube.jpg" alt="Oversized cube gift in purple snowflake paper with silver organza bow and snowflake" width="900" height="900" loading="lazy"><figcaption>Oversized, finished in silver</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-purple-joy.jpg" alt="Purple snowflake gift with blue and silver ribbon, bluebird ornament and Joy tag" width="900" height="900" loading="lazy"><figcaption>Ornament and tag detail</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/sq-nutcracker.jpg" alt="Nutcracker print paper with sage green glitter ribbon" width="900" height="900" loading="lazy"><figcaption>Nutcracker print</figcaption></figure>
+      <figure class="gift-tile reveal"><img src="assets/photos/land-colorful-trees.jpg" alt="Two gifts in colorful bottle-brush tree paper with emerald satin bow" width="900" height="900" loading="lazy"><figcaption>Bright trees, emerald satin</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <div class="section-head reveal"><span class="kicker">Year round</span><h2>Every holiday on the calendar</h2></div>
     <div class="grid grid-4">
       <div class="card reveal"><h3>Hanukkah</h3><p>Eight nights, eight gifts per person, blue-and-silver or your family's palette.</p></div>
@@ -689,8 +720,7 @@ about_body = page_head("About", f"Meet {OWNER.split()[0]}, the hands behind the 
       <div class="callout"><span class="h">The signature ribbon</span><p>The pink polka-dot ribbon from the business card is tied on the first gift of every order. Consider it a signature.</p></div>
     </div>
     <div class="reveal">
-      <div class="gift-tile" style="background:#fde4ee;border-radius:26px">{gift_svg("#fff","#e5648f","#fff","#b23a5e","#fde4ee")}</div>
-      <p class="fineprint" style="text-align:center;margin-top:10px">Studio portrait to follow.</p>
+      <figure class="photo-card reveal"><img src="assets/photos/about-hannah.jpg" alt="Buffalo check gift with black yarn, burlap ribbon and a Scrabble-tile name tag reading Hannah" width="960" height="1200" loading="lazy"><figcaption>Details like a Scrabble-tile name tag are what people remember.</figcaption></figure>
     </div>
   </div>
 </section>

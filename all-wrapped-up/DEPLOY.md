@@ -56,7 +56,7 @@ form for anyone who prefers mailto.
   (LocalBusiness schema) and put the website in every social bio.
 - Ask 5 happy clients for Google reviews; a testimonials section can be added to the
   home page once real ones exist.
-- Replace the illustrated gallery with real photos (see `assets/photos/README.md`).
+- Add more real photos as orders come in (see `assets/photos/README.md` for the studio treatment).
 
 ## Things to confirm with Amiebeth
 
