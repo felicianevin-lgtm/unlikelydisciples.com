@@ -1,0 +1,4 @@
+/* Self-hosted fonts (SIL Open Font License): Great Vibes, Caveat (variable), Nunito (variable) — latin subset */
+@font-face{font-family:'Great Vibes';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/great-vibes-400.woff2) format('woff2')}
+@font-face{font-family:'Caveat';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/caveat.woff2) format('woff2-variations'),url(fonts/caveat.woff2) format('woff2')}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:200 1000;font-display:swap;src:url(fonts/nunito.woff2) format('woff2-variations'),url(fonts/nunito.woff2) format('woff2')}
