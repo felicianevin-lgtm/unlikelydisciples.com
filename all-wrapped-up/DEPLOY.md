@@ -54,8 +54,8 @@ form for anyone who prefers mailto.
 - **Bing Places / Bing Webmaster** — import from Google in two clicks.
 - Add Facebook / Instagram page URLs to the `"sameAs": []` list in `build.py`
   (LocalBusiness schema) and put the website in every social bio.
-- Ask 5 happy clients for Google reviews; then replace the sample testimonials on
-  the home page with real ones (they're marked "representative" until then).
+- Ask 5 happy clients for Google reviews; a testimonials section can be added to the
+  home page once real ones exist.
 - Replace the illustrated gallery with real photos (see `assets/photos/README.md`).
 
 ## Things to confirm with Amiebeth

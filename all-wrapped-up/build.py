@@ -73,7 +73,7 @@ HERO_SVG = '''<svg viewBox="0 0 480 440" aria-hidden="true">
  <path d="M170 44c-12 14-36 40-54 26s22-34 54-26z" fill="url(#pd)" opacity=".7"/><path d="M170 44c12 14 36 40 54 26s-22-34-54-26z" fill="url(#pd)" opacity=".7"/>
  <circle cx="170" cy="42" r="16" fill="#b23a5e"/><circle cx="164" cy="36" r="5" fill="#fff" opacity=".6"/>
  <!-- gift tag -->
- <g transform="rotate(-12 250 120)"><rect x="220" y="100" width="82" height="46" rx="8" fill="#fff" stroke="#c9a227" stroke-width="2"/><circle cx="232" cy="123" r="4" fill="#c9a227"/><text x="266" y="129" text-anchor="middle" font-family="Caveat, cursive" font-size="20" fill="#b23a5e">for you</text></g>
+ <g transform="rotate(-12 250 120)"><rect x="220" y="100" width="82" height="46" rx="8" fill="#fff" stroke="#c9a227" stroke-width="2"/><circle cx="232" cy="123" r="4" fill="#c9a227"/><text x="266" y="129" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="19" fill="#b23a5e">for you</text></g>
 </g>
 <!-- sparkles -->
 <g fill="#c9a227"><path d="M60 60l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/><path d="M420 90l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/><path d="M400 200l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/></g>
@@ -138,8 +138,8 @@ def layout(page):
 <meta name="twitter:title" content="{esc(page.get('og_title', title))}">
 <meta name="twitter:description" content="{esc(desc)}">
 <meta name="twitter:image" content="{SITE}/assets/og-image.png">
-<link rel="preload" href="assets/fonts/great-vibes-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/nunito.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/style.css">
 {LOCAL_BUSINESS_LD}
@@ -231,7 +231,7 @@ LOCAL_BUSINESS_LD = f'''<script type="application/ld+json">
 
 def cta_band(h, p, primary=("Request a free quote", "contact.html"), secondary=("See pricing", "pricing.html")):
     return f'''<section class="cta-band"><div class="wrap reveal">
-  <span class="kicker">Let's get it wrapped</span>
+  <span class="kicker">Get started</span>
   <h2>{h}</h2><p>{p}</p>
   <div class="hero-actions" style="justify-content:center"><a class="btn btn-primary btn-lg" href="{primary[1]}">{primary[0]}</a><a class="btn btn-secondary btn-lg" href="{secondary[1]}">{secondary[0]}</a></div>
   <p class="contact-line">Call or text <a href="tel:{PHONE_TEL}">{PHONE}</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></p>
@@ -248,8 +248,8 @@ def estimator(compact=False):
     return f'''<form class="estimator reveal" data-estimator onsubmit="return false">
   <div>
     <span class="kicker">Instant estimate</span>
-    <h3>How many gifts are we wrapping?</h3>
-    <p class="note">Ballpark only. Volume discounts start at 25 gifts. Your final quote comes after a quick chat about paper, ribbon and delivery.</p>
+    <h3>Estimate your order</h3>
+    <p class="note">An approximate range. Volume discounts begin at 25 gifts. Your written quote follows a short conversation about paper, ribbon and delivery.</p>
     <div class="field"><label for="e-small">Small gifts (jewelry, books, candles, gift cards) — <span data-count="small">0</span></label><input type="range" id="e-small" name="small" min="0" max="100" value="{'4' if compact else '0'}"></div>
     <div class="field"><label for="e-medium">Medium gifts (sweaters, games, shoebox size) — <span data-count="medium">0</span></label><input type="range" id="e-medium" name="medium" min="0" max="100" value="{'6' if compact else '0'}"></div>
     <div class="field"><label for="e-large">Large gifts (small appliances, big toys) — <span data-count="large">0</span></label><input type="range" id="e-large" name="large" min="0" max="50" value="{'2' if compact else '0'}"></div>
@@ -267,7 +267,7 @@ def estimator(compact=False):
     <div class="amount" data-amount aria-live="polite">$0</div>
     <span class="save" data-save hidden></span>
     <p class="breakdown" data-breakdown>Add a few gifts to see an estimate.</p>
-    <a class="btn btn-primary" data-quote-link href="contact.html">Lock in this estimate</a>
+    <a class="btn btn-primary" data-quote-link href="contact.html">Request a written quote</a>
     <p class="fineprint" style="margin-top:12px">Pickup &amp; delivery is free within 15 miles of Sweetwater and quoted for Knoxville and Chattanooga.</p>
   </div>
 </form>'''
@@ -281,8 +281,8 @@ home_body = f'''
   <div class="wrap">
     <div class="reveal in">
       <span class="eyebrow">Sweetwater, Tennessee · Knoxville to Chattanooga</span>
-      <h1>Gift wrapping, <span class="script">beautifully done</span> for you</h1>
-      <p class="lede">Hand-wrapped gifts with coordinated paper, real ribbon and hand-tied bows. For companies with a holiday party to pull off and families who would rather enjoy the season than fight the tape dispenser.</p>
+      <h1>Professional gift wrapping for <em>businesses and busy families</em></h1>
+      <p class="lede">Hand-wrapped gifts with coordinated paper, real ribbon and hand-tied bows. Corporate holiday orders, client gifts and family celebrations, collected and delivered across East Tennessee.</p>
       <div class="hero-actions">
         <a class="btn btn-primary btn-lg" href="contact.html">Request a free quote</a>
         <a class="btn btn-secondary btn-lg" href="pricing.html">See packages &amp; pricing</a>
@@ -295,7 +295,7 @@ home_body = f'''
     </div>
     <div class="hero-art">
       {HERO_SVG}
-      <div class="hero-badge"><strong>Now booking</strong>Holiday 2026</div>
+      <div class="hero-badge"><strong>Now booking</strong>Holiday 2026 orders</div>
     </div>
   </div>
 </section>
@@ -306,15 +306,15 @@ home_body = f'''
       <div class="audience corp reveal">
         <span class="tag">For businesses</span>
         <h3>Corporate gift wrapping</h3>
-        <p>Client gifts, employee appreciation, holiday party favors. Consistent, on-brand wrapping for 25 to 2,500 gifts, delivered ready to hand out.</p>
+        <p>Client gifts, employee appreciation and holiday party favors. Consistent, on-brand wrapping for 25 to 2,500 gifts, delivered ready to present.</p>
         <ul><li>Brand-color ribbon &amp; logo gift tags</li><li>Volume pricing and a single invoice</li><li>Pickup from your office, delivery on your date</li></ul>
         <a class="btn" href="corporate-gift-wrapping.html">Corporate packages →</a>
       </div>
       <div class="audience fam reveal">
         <span class="tag">For families</span>
         <h3>Holiday &amp; everyday wrapping</h3>
-        <p>Drop off the pile, pick up a picture-perfect stack. Christmas, birthdays, showers, weddings, anniversaries and the gifts you keep forgetting to wrap.</p>
-        <ul><li>Coordinated paper so the tree looks magazine-ready</li><li>Santa paper kept separate, tags done, hidden from little eyes</li><li>Book once and forget about it</li></ul>
+        <p>Drop off the shopping bags and collect a beautifully finished stack. Christmas, birthdays, showers, weddings and anniversaries, wrapped to a standard you would be proud to give.</p>
+        <ul><li>Coordinated palettes so every gift under the tree belongs together</li><li>Santa gifts wrapped separately and returned sorted by recipient</li><li>Pickup and delivery scheduled around your week</li></ul>
         <a class="btn" href="holiday-gift-wrapping.html">Family packages →</a>
       </div>
     </div>
@@ -323,31 +323,31 @@ home_body = f'''
 
 <section class="alt">
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">Why hire a gift wrapper?</span><h2>Because your time is worth more than a roll of tape</h2><p>The average family spends six or more hours wrapping gifts each December. Businesses spend far longer, and it usually lands on the one person who least has time for it.</p></div>
+    <div class="section-head reveal"><span class="kicker">Why hire a professional</span><h2>Presentation is part of the gift</h2><p>The average household spends six or more hours wrapping each December. For a business, the job is measured in days and usually lands on the person who can least spare them.</p></div>
     <div class="grid grid-4">
-      <div class="card reveal"><div class="icon">{ICONS['clock']}</div><h3>Get your hours back</h3><p>Hand off the whole pile. Spend the evening with the people the gifts are for instead of on the floor with scissors.</p></div>
-      <div class="card reveal"><div class="icon">{ICONS['sparkle']}</div><h3>Gifts that look the part</h3><p>Crisp corners, real ribbon, hand-tied bows and tags that match. The wrapping says as much as the gift.</p></div>
-      <div class="card reveal"><div class="icon">{ICONS['building']}</div><h3>On-brand, every time</h3><p>Companies get consistent wrapping across every gift, with your colors and your logo on the tag.</p></div>
-      <div class="card reveal"><div class="icon">{ICONS['truck']}</div><h3>We come to you</h3><p>Pickup and delivery across the I-75 corridor from Knoxville to Chattanooga, or drop off at the Sweetwater studio.</p></div>
+      <div class="card reveal"><div class="icon">{ICONS['clock']}</div><h3>Reclaim your time</h3><p>Hand over the entire order and spend the season with the people the gifts are for.</p></div>
+      <div class="card reveal"><div class="icon">{ICONS['sparkle']}</div><h3>A finished look</h3><p>Crisp corners, concealed seams, real ribbon and hand-tied bows. Every gift is tagged and ready to present.</p></div>
+      <div class="card reveal"><div class="icon">{ICONS['building']}</div><h3>On brand, every time</h3><p>Consistent wrapping across every gift in the order, in your colors, with your logo on the tag.</p></div>
+      <div class="card reveal"><div class="icon">{ICONS['truck']}</div><h3>Pickup and delivery</h3><p>Collection and delivery along the I-75 corridor from Knoxville to Chattanooga, or drop off at the Sweetwater studio.</p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">How it works</span><h2>Four easy steps to done</h2></div>
+    <div class="section-head reveal"><span class="kicker">How it works</span><h2>A simple, four-step process</h2></div>
     <div class="steps">
-      <div class="step reveal"><h3>Tell us about the gifts</h3><p>Send a quick count and sizes through the quote form, or call or text. We'll reply within one business day.</p></div>
-      <div class="step reveal"><h3>Pick your look</h3><p>Choose a curated palette or send brand colors. Paper, ribbon, tags and embellishments all coordinated for you.</p></div>
-      <div class="step reveal"><h3>Drop off or we pick up</h3><p>Bring gifts to the studio in Sweetwater, or schedule pickup from your home or office.</p></div>
-      <div class="step reveal"><h3>Delivered ready to give</h3><p>Every gift wrapped, tagged and returned on your date. Corporate orders can ship straight to the party venue.</p></div>
+      <div class="step reveal"><h3>Request a quote</h3><p>Send a gift count, approximate sizes and your date through the quote form, or call or text. Quotes are returned within one business day.</p></div>
+      <div class="step reveal"><h3>Choose a style</h3><p>Select a curated palette or send brand colors. Paper, ribbon, tags and embellishments are coordinated for you.</p></div>
+      <div class="step reveal"><h3>Drop off or schedule pickup</h3><p>Bring gifts to the Sweetwater studio, or arrange collection from your home or office.</p></div>
+      <div class="step reveal"><h3>Delivered on your date</h3><p>Every gift wrapped, tagged and returned when promised. Corporate orders can be delivered directly to the venue.</p></div>
     </div>
   </div>
 </section>
 
 <section class="pinkbg">
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">Pricing that's easy to plan around</span><h2>Simple per-gift pricing with volume discounts</h2><p>Every price includes premium paper, coordinating ribbon, a hand-tied bow and a gift tag. Move the sliders for an instant estimate.</p></div>
+    <div class="section-head reveal"><span class="kicker">Transparent pricing</span><h2>Per-gift pricing with volume discounts</h2><p>Every price includes premium paper, coordinating ribbon, a hand-tied bow and a gift tag. Adjust the sliders for an instant estimate.</p></div>
     {estimator(compact=True)}
     <p style="text-align:center;margin-top:22px"><a class="btn btn-secondary" href="pricing.html">Full price list &amp; packages</a></p>
   </div>
@@ -355,7 +355,7 @@ home_body = f'''
 
 <section>
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">Every occasion</span><h2>Wrapping for the moments that matter</h2></div>
+    <div class="section-head reveal"><span class="kicker">Portfolio</span><h2>Styles for every occasion</h2><p>From the signature pink polka dot to understated black and gold for corporate clients.</p></div>
     <div class="gallery">
       <figure class="gift-tile reveal" style="background:#fde4ee">{gift_svg("#fff","#e5648f","#fff","#b23a5e","#fde4ee")}<figcaption>Signature pink &amp; polka dot</figcaption></figure>
       <figure class="gift-tile reveal" style="background:#2b2224">{gift_svg("#3d3033","#c9a227","#f0dfa3","#e8c65a","#2b2224")}<figcaption>Corporate black &amp; gold</figcaption></figure>
@@ -366,23 +366,22 @@ home_body = f'''
       <figure class="gift-tile reveal" style="background:#fff2e0">{gift_svg("#fff","#f0a640","#fff","#c9772a","#fff7ea")}<figcaption>Birthday brights</figcaption></figure>
       <figure class="gift-tile reveal" style="background:#e6eef5">{gift_svg("#1f3a5f","#fff","#1f3a5f","#c9a227","#e6eef5")}<figcaption>Navy &amp; gold client gifts</figcaption></figure>
     </div>
-    <p class="fineprint" style="text-align:center">Real photos of finished orders coming soon. Ask to see recent work when you request a quote.</p>
+    <p class="fineprint" style="text-align:center">Photographs of recent orders are available on request.</p>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">Kind words</span><h2>What clients say</h2></div>
-    <div class="quotes">
-      <div class="quote reveal"><span class="stars" aria-label="5 stars">★★★★★</span><p>We had 140 client gifts for our holiday open house and zero time. Amiebeth picked them up on Tuesday and they came back Thursday looking like a department store display, tags and all.</p><cite>Office manager<span>Knoxville, TN</span></cite></div>
-      <div class="quote reveal"><span class="stars" aria-label="5 stars">★★★★★</span><p>Best money I spent all December. Four kids, two grandmothers, one very nosy husband. Everything was wrapped, labeled and hidden before any of them noticed.</p><cite>Mom of four<span>Athens, TN</span></cite></div>
-      <div class="quote reveal"><span class="stars" aria-label="5 stars">★★★★★</span><p>She wrapped every bridesmaid gift and the welcome bags for our out-of-town guests. The ribbon matched our wedding colors exactly.</p><cite>Bride<span>Chattanooga, TN</span></cite></div>
+    <div class="section-head reveal"><span class="kicker">Our standard</span><h2>What every order includes</h2></div>
+    <div class="promise reveal">
+      <div><div class="num">01</div><h3>Logged intake</h3><p>Every gift is recorded at drop-off or pickup and returned against a checklist, so nothing is misplaced.</p></div>
+      <div><div class="num">02</div><h3>Photo approval</h3><p>Corporate orders receive a photographed sample in your colors before the batch is wrapped.</p></div>
+      <div><div class="num">03</div><h3>On-time delivery</h3><p>Your date is confirmed in writing when the deposit is placed, and it is held.</p></div>
     </div>
-    <p class="fineprint" style="text-align:center">Reviews shown are representative. Ask us for references from recent corporate and family orders.</p>
   </div>
 </section>
 
-{cta_band("Ready to hand off the wrapping?", "Tell us how many gifts and when you need them. Quotes are free and usually back within one business day.")}
+{cta_band("Ready to hand off the wrapping?", "Share your gift count and date. Quotes are complimentary and returned within one business day.")}
 '''
 pages.append(dict(slug="index.html", crumb="Home",
   title=f"Gift Wrapping Service in Sweetwater, TN | {BIZ}",
@@ -393,13 +392,13 @@ pages.append(dict(slug="index.html", crumb="Home",
 # CORPORATE
 corp_ld = f'''<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Service","serviceType":"Corporate gift wrapping","name":"Corporate Gift Wrapping Service","provider":{{"@id":"{SITE}/#business"}},"areaServed":[{",".join(f'{{"@type":"City","name":"{c}"}}' for c in AREA)}],"description":"Bulk gift wrapping for corporate holiday parties, client gifts and employee appreciation with brand-color ribbon, logo gift tags, pickup and delivery across East Tennessee.","offers":{{"@type":"Offer","priceCurrency":"USD","price":"8.00","priceSpecification":{{"@type":"UnitPriceSpecification","price":"8.00","priceCurrency":"USD","unitText":"per gift, starting at"}}}}}}</script>'''
 corp_body = page_head("Corporate gift wrapping", "Corporate gift wrapping for holiday parties, client gifts &amp; employee appreciation",
-  "Hundreds of gifts, one consistent look, delivered on your date. Serving offices, clinics, dealerships, law firms, churches and schools from Knoxville to Chattanooga.", "For businesses") + f'''
+  "Hundreds of gifts, one consistent presentation, delivered on your date. Serving offices, medical practices, dealerships, law firms, churches and schools from Knoxville to Chattanooga.", "For businesses") + f'''
 <section>
   <div class="wrap two-col">
     <div class="reveal">
       <span class="kicker">The problem we solve</span>
-      <h2>Your team has better things to do the week of the party</h2>
-      <p class="lede" style="font-size:18px">Corporate gifting usually ends the same way: an admin, a conference room, three rolls of paper that don't match and a late night. We take the whole job off your plate so the gifts look intentional and your people stay on their real work.</p>
+      <h2>Your team has better uses for the week of the event</h2>
+      <p class="lede" style="font-size:18px">Corporate gifting too often ends with a conference room, mismatched paper and a late night for whoever drew the short straw. We take the entire job off your plate so the gifts look intentional and your staff stay on their own work.</p>
       <ul class="checklist">
         <li>Holiday party gifts and door prizes</li>
         <li>Client and referral-partner appreciation gifts</li>
@@ -412,9 +411,9 @@ corp_body = page_head("Corporate gift wrapping", "Corporate gift wrapping for ho
       <div class="stats">
         <div class="stat"><b>25+</b><span>gifts for volume pricing</span></div>
         <div class="stat"><b>1</b><span>invoice, W-9 on request</span></div>
-        <div class="stat"><b>0</b><span>late nights for your staff</span></div>
+        <div class="stat"><b>5</b><span>business-day standard turnaround</span></div>
       </div>
-      <div class="callout"><span class="h">Brand it.</span><p>Send your logo and brand colors. We source ribbon to match and print custom gift tags so every gift reads as yours, not ours.</p></div>
+      <div class="callout"><span class="h">Branded presentation</span><p>Send your logo and brand colors. We source ribbon to match and print custom gift tags so every gift reads as yours.</p></div>
     </div>
   </div>
 </section>
@@ -436,7 +435,7 @@ corp_body = page_head("Corporate gift wrapping", "Corporate gift wrapping for ho
 
 <section>
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">Add-ons companies love</span><h2>Make it memorable</h2></div>
+    <div class="section-head reveal"><span class="kicker">Enhancements</span><h2>Finishing touches for corporate orders</h2></div>
     <div class="grid grid-3">
       <div class="card reveal"><div class="icon">{ICONS['tag']}</div><h3>Logo gift tags</h3><p>Your logo and a message on a heavy card-stock tag, tied on with ribbon. From $1.50 per gift.</p></div>
       <div class="card reveal"><div class="icon">{ICONS['heart']}</div><h3>Handwritten notes</h3><p>Personal notes handwritten from your message list, so each recipient gets something that feels one-to-one. $2 per gift.</p></div>
@@ -447,10 +446,10 @@ corp_body = page_head("Corporate gift wrapping", "Corporate gift wrapping for ho
 
 <section class="alt">
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">How corporate orders work</span><h2>Booked to delivered in five steps</h2></div>
+    <div class="section-head reveal"><span class="kicker">Process</span><h2>From quote to delivery in five steps</h2></div>
     <div class="steps" style="grid-template-columns:repeat(5,1fr)">
       <div class="step reveal"><h3>Quote</h3><p>Send gift count, sizes and your event date. You'll get a written quote within one business day.</p></div>
-      <div class="step reveal"><h3>Style approval</h3><p>We send a photo mock-up in your colors. Approve it or tweak it.</p></div>
+      <div class="step reveal"><h3>Style approval</h3><p>We send a photographed sample in your colors for approval or revision.</p></div>
       <div class="step reveal"><h3>Pickup</h3><p>We collect gifts from your office, or receive shipments from your vendors directly.</p></div>
       <div class="step reveal"><h3>Wrapping</h3><p>Wrapped in the Sweetwater studio, boxed and labeled by recipient or department.</p></div>
       <div class="step reveal"><h3>Delivery</h3><p>Delivered to your office or venue on the date you choose, with one itemized invoice.</p></div>
@@ -460,13 +459,13 @@ corp_body = page_head("Corporate gift wrapping", "Corporate gift wrapping for ho
 
 <section>
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">Book early</span><h2>December fills up fast</h2><p>Corporate holiday slots are reserved in order of deposit. Booking by early November guarantees delivery before your party date.</p></div>
+    <div class="section-head reveal"><span class="kicker">Holiday scheduling</span><h2>December capacity is limited</h2><p>Corporate holiday slots are reserved in order of deposit. Booking by early November guarantees delivery before your event date.</p></div>
     <div class="countdown" data-countdown></div>
     <p style="text-align:center;color:var(--ink-soft)">To guarantee delivery before Christmas, book by <strong data-book-by>early December</strong>.</p>
   </div>
 </section>
 
-{cta_band("Get a corporate quote in one business day", "Tell us the gift count, rough sizes and your party date. We'll send pricing, a timeline and a photo of a sample wrap in your brand colors.", ("Request a corporate quote", "contact.html?type=corporate"), ("Call " + PHONE, "tel:" + PHONE_TEL))}
+{cta_band("Receive a corporate quote within one business day", "Share the gift count, approximate sizes and your event date. We will return pricing, a timeline and a photographed sample in your brand colors.", ("Request a corporate quote", "contact.html?type=corporate"), ("Call " + PHONE, "tel:" + PHONE_TEL))}
 '''
 pages.append(dict(slug="corporate-gift-wrapping.html", crumb="Corporate gift wrapping",
   title="Corporate Gift Wrapping | Knoxville & Chattanooga TN",
@@ -476,16 +475,16 @@ pages.append(dict(slug="corporate-gift-wrapping.html", crumb="Corporate gift wra
 
 # SERVICES / OCCASIONS
 services_body = page_head("Occasions", "Gift wrapping for weddings, showers, birthdays, anniversaries &amp; holidays",
-  "One gift or one hundred. Every occasion gets coordinated paper, real ribbon, a hand-tied bow and a tag, wrapped by hand in Sweetwater, Tennessee.", "Every occasion") + f'''
+  "One gift or one hundred. Every occasion receives coordinated paper, real ribbon, a hand-tied bow and a tag, wrapped by hand in Sweetwater, Tennessee.", "Occasions") + f'''
 <section>
   <div class="wrap">
     <div class="occasions">
-      <div class="occasion reveal" id="weddings"><div class="emoji">💍</div><h3>Weddings</h3><p>Bridesmaid and groomsmen gifts, parent gifts, welcome bags for out-of-town guests and the gift you're bringing to someone else's big day.</p><ul><li>Ribbon matched to your wedding palette</li><li>Welcome-bag assembly and tagging</li><li>Delivery to the venue or hotel block</li></ul></div>
-      <div class="occasion reveal" id="bridal-showers"><div class="emoji">🥂</div><h3>Bridal showers</h3><p>Host gifts, favors and shower gifts wrapped to match the theme, so the gift table looks styled and photographs beautifully.</p><ul><li>Favor wrapping in bulk</li><li>Coordinated gift-table display</li><li>Registry gifts received and wrapped for you</li></ul></div>
-      <div class="occasion reveal" id="baby-showers"><div class="emoji">🍼</div><h3>Baby showers</h3><p>Big boxes, odd shapes and tiny things. We wrap car seats, strollers and onesies alike, in soft palettes or the parents' nursery colors.</p><ul><li>Oversized item specialists</li><li>Gender-reveal wrapping (we can keep a secret)</li><li>Diaper cakes and gift baskets finished</li></ul></div>
-      <div class="occasion reveal" id="birthdays"><div class="emoji">🎂</div><h3>Birthdays</h3><p>Milestone birthdays, kids' parties, surprise gifts. Bright and playful or elegant and understated, wrapped to suit the person.</p><ul><li>Kid-proof wrapping that survives the car ride</li><li>Themed paper and ribbon</li><li>Same-week turnaround when available</li></ul></div>
-      <div class="occasion reveal" id="anniversaries"><div class="emoji">💝</div><h3>Anniversaries</h3><p>A gift that says you planned ahead. Luxe paper, double-satin ribbon and a handwritten card, ready before the date, not the night of.</p><ul><li>Luxury finishes and embellishments</li><li>Handwritten note cards</li><li>Discreet pickup and delivery</li></ul></div>
-      <div class="occasion reveal" id="holidays"><div class="emoji">🎄</div><h3>Holidays</h3><p>Christmas, Hanukkah, Valentine's Day, Mother's and Father's Day, Easter and graduation. Seasonal palettes or your own family tradition.</p><ul><li>Whole-family Christmas packages</li><li>Santa paper kept separate</li><li><a href="holiday-gift-wrapping.html">See holiday packages →</a></li></ul></div>
+      <div class="occasion reveal" id="weddings"><div class="icon">{ICONS['heart']}</div><h3>Weddings</h3><p>Bridesmaid and groomsmen gifts, parent gifts, welcome bags for out-of-town guests and the gift you're bringing to someone else's big day.</p><ul><li>Ribbon matched to your wedding palette</li><li>Welcome-bag assembly and tagging</li><li>Delivery to the venue or hotel block</li></ul></div>
+      <div class="occasion reveal" id="bridal-showers"><div class="icon">{ICONS['sparkle']}</div><h3>Bridal showers</h3><p>Host gifts, favors and shower gifts wrapped to match the theme, so the gift table looks styled and photographs beautifully.</p><ul><li>Favor wrapping in bulk</li><li>Coordinated gift-table display</li><li>Registry gifts received and wrapped for you</li></ul></div>
+      <div class="occasion reveal" id="baby-showers"><div class="icon">{ICONS['gift']}</div><h3>Baby showers</h3><p>Large boxes, unusual shapes and the smallest keepsakes, wrapped in soft palettes or the nursery colors the parents have chosen.</p><ul><li>Oversized item specialists</li><li>Gender-reveal wrapping handled discreetly</li><li>Diaper cakes and gift baskets finished</li></ul></div>
+      <div class="occasion reveal" id="birthdays"><div class="icon">{ICONS['star']}</div><h3>Birthdays</h3><p>Milestone birthdays, children's parties and surprise gifts. Bright and playful or quietly elegant, wrapped to suit the recipient.</p><ul><li>Durable wrapping that travels well</li><li>Themed paper and ribbon</li><li>Same-week turnaround when available</li></ul></div>
+      <div class="occasion reveal" id="anniversaries"><div class="icon">{ICONS['heart']}</div><h3>Anniversaries</h3><p>Luxury paper, double-satin ribbon and a handwritten card, finished well ahead of the date.</p><ul><li>Luxury finishes and embellishments</li><li>Handwritten note cards</li><li>Discreet pickup and delivery</li></ul></div>
+      <div class="occasion reveal" id="holidays"><div class="icon">{ICONS['calendar']}</div><h3>Holidays</h3><p>Christmas, Hanukkah, Valentine's Day, Mother's and Father's Day, Easter and graduation. Seasonal palettes or your own family tradition.</p><ul><li>Whole-family Christmas packages</li><li>Santa paper kept separate</li><li><a href="holiday-gift-wrapping.html">See holiday packages →</a></li></ul></div>
     </div>
   </div>
 </section>
@@ -504,13 +503,13 @@ services_body = page_head("Occasions", "Gift wrapping for weddings, showers, bir
       </ul>
     </div>
     <div class="reveal">
-      <div class="callout"><span class="h">Odd shapes welcome.</span><p>Baskets, bicycles, guitars, stuffed animals, bottles. If it can be given, it can be wrapped. Bring it by or send a photo for a quote.</p></div>
-      <div class="callout"><span class="h">Prefer your own paper?</span><p>Supply your own paper and ribbon and we'll wrap with it at a reduced labor rate. Ask when you book.</p></div>
+      <div class="callout"><span class="h">Unusual shapes welcome</span><p>Baskets, bicycles, instruments, plush toys and bottles are all wrapped regularly. Send a photograph for an exact quote.</p></div>
+      <div class="callout"><span class="h">Your own materials</span><p>Supply your own paper and ribbon and we will wrap with it at a reduced rate. Mention it when you book.</p></div>
     </div>
   </div>
 </section>
 
-{cta_band("Tell us about the occasion", "Send the date, the gift count and any colors you love. We'll take it from there.")}
+{cta_band("Tell us about the occasion", "Send the date, the gift count and any colors you have in mind. We will take it from there.")}
 '''
 pages.append(dict(slug="services.html", crumb="Occasions",
   title="Wedding, Shower & Birthday Gift Wrapping | All Wrapped Up TN",
@@ -545,7 +544,7 @@ pricing_body = page_head("Pricing", "Gift wrapping prices &amp; packages",
         <ul><li>Coordinated palette of your choice</li><li>Gift tags with names</li><li>Studio drop-off &amp; pickup in Sweetwater</li><li>3-business-day turnaround</li></ul><a class="btn btn-secondary" href="contact.html?type=family">Book Stocking Saver</a></div>
       <div class="plan featured reveal"><span class="flag">Best value</span><span class="name">Holiday Hero</span><h3>25 gifts</h3><p class="who">The whole family, grandparents and teachers included</p><div class="price">$189</div><p class="per">about $7.56 per gift</p>
         <ul><li>Up to two palettes (for example, Santa paper + family paper)</li><li>Handwritten gift tags</li><li>Free pickup &amp; delivery within 15 miles</li><li>Gifts returned sorted by recipient</li><li>Priority December scheduling</li></ul><a class="btn btn-primary" href="contact.html?type=family">Book Holiday Hero</a></div>
-      <div class="plan reveal"><span class="name">Whole Tree</span><h3>50 gifts</h3><p class="who">Big families, blended families, the house everyone comes to</p><div class="price">$349</div><p class="per">about $6.98 per gift</p>
+      <div class="plan reveal"><span class="name">Whole Tree</span><h3>50 gifts</h3><p class="who">Large households and the home everyone gathers in</p><div class="price">$349</div><p class="per">about $6.98 per gift</p>
         <ul><li>Up to three palettes</li><li>Handwritten tags &amp; note cards</li><li>Free pickup &amp; delivery, Knoxville to Chattanooga</li><li>Two pickups if you shop in rounds</li><li>First pick of December dates</li></ul><a class="btn btn-gold" href="contact.html?type=family">Book Whole Tree</a></div>
     </div>
   </div>
@@ -585,12 +584,12 @@ pricing_body = page_head("Pricing", "Gift wrapping prices &amp; packages",
 
 <section class="pinkbg">
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">Try it</span><h2>Build your estimate</h2></div>
+    <div class="section-head reveal"><span class="kicker">Estimate</span><h2>Build an estimate for your order</h2></div>
     {estimator()}
   </div>
 </section>
 
-{cta_band("Want an exact quote?", "Send a count and a few photos and we'll price it precisely, usually within one business day.")}
+{cta_band("Need an exact figure?", "Send a count and a few photographs and we will price the order precisely, within one business day.")}
 '''
 pricing_ld = f'''<script type="application/ld+json">{{"@context":"https://schema.org","@type":"ItemList","name":"Gift wrapping packages","itemListElement":[
 {{"@type":"Offer","position":1,"name":"Stocking Saver — 10 gifts","price":"79","priceCurrency":"USD","url":"{SITE}/pricing.html"}},
@@ -606,10 +605,10 @@ pages.append(dict(slug="pricing.html", crumb="Pricing",
 
 # HOLIDAY
 holiday_body = page_head("Holiday gift wrapping", "Christmas &amp; holiday gift wrapping for busy families",
-  "Drop off the shopping bags. Pick up a tree's worth of beautifully wrapped, tagged and sorted gifts. Serving Sweetwater, Knoxville, Chattanooga and everywhere along I-75.", "Holiday 2026") + f'''
+  "Drop off the shopping bags and collect a tree's worth of beautifully wrapped, tagged and sorted gifts. Serving Sweetwater, Knoxville, Chattanooga and the communities along I-75.", "Holiday 2026") + f'''
 <section>
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">Tick tock</span><h2>Christmas is closer than it looks</h2></div>
+    <div class="section-head reveal"><span class="kicker">Holiday timeline</span><h2>Christmas is closer than it looks</h2></div>
     <div class="countdown" data-countdown></div>
     <p style="text-align:center;color:var(--ink-soft)">Book by <strong data-book-by>mid-December</strong> to guarantee your gifts are back under the tree in time.</p>
   </div>
@@ -618,13 +617,13 @@ holiday_body = page_head("Holiday gift wrapping", "Christmas &amp; holiday gift 
 <section class="alt">
   <div class="wrap two-col">
     <div class="reveal">
-      <span class="kicker">The Christmas Eve rescue</span>
+      <span class="kicker">For families</span>
       <h2>Reclaim the best part of December</h2>
-      <p class="lede" style="font-size:18px">You already did the hard part: the shopping. Wrapping is the part that eats the last two weekends of the year. Hand it over and get those weekends back for cookies, lights and actually sitting down.</p>
+      <p class="lede" style="font-size:18px">The shopping is the hard part, and it is done. Wrapping is what consumes the last two weekends of the year. Hand it over and spend them on the season instead.</p>
       <ul class="checklist">
         <li>Santa gifts wrapped in separate paper and kept apart from family gifts</li>
         <li>Gifts returned sorted by recipient, so stockings and tree are a five-minute job</li>
-        <li>Discreet pickup and delivery while the kids are at school</li>
+        <li>Discreet pickup and delivery during school hours</li>
         <li>Teacher, coach and neighbor gifts included in the same order</li>
         <li>Coordinated palette so the tree looks styled, not random</li>
       </ul>
@@ -635,18 +634,18 @@ holiday_body = page_head("Holiday gift wrapping", "Christmas &amp; holiday gift 
         <div class="stat"><b>25</b><span>gifts in our most popular bundle</span></div>
         <div class="stat"><b>$189</b><span>Holiday Hero package</span></div>
       </div>
-      <div class="callout"><span class="h">Order online, ship to us.</span><p>Have gifts shipped straight to the Sweetwater studio. We'll unbox, check the packing slip, wrap and deliver the finished stack. No boxes on the porch for curious eyes.</p></div>
+      <div class="callout"><span class="h">Ship directly to the studio</span><p>Have online orders delivered to the Sweetwater studio. We unbox, check each item against the packing slip, wrap and deliver the finished order. No boxes on the porch.</p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">Holiday packages</span><h2>Pick a bundle, we do the rest</h2></div>
+    <div class="section-head reveal"><span class="kicker">Holiday packages</span><h2>Choose a bundle and consider it done</h2></div>
     <div class="pricing">
       <div class="plan reveal"><span class="name">Stocking Saver</span><h3>10 gifts</h3><p class="who">One person's list or the special few</p><div class="price">$79</div><p class="per">studio drop-off in Sweetwater</p><ul><li>One coordinated palette</li><li>Tags with names</li><li>3-day turnaround</li></ul><a class="btn btn-secondary" href="contact.html?type=family">Book now</a></div>
       <div class="plan featured reveal"><span class="flag">Most popular</span><span class="name">Holiday Hero</span><h3>25 gifts</h3><p class="who">The whole family plus teachers and grandparents</p><div class="price">$189</div><p class="per">free pickup &amp; delivery within 15 miles</p><ul><li>Santa paper + family paper</li><li>Handwritten tags</li><li>Sorted by recipient</li><li>Priority December dates</li></ul><a class="btn btn-primary" href="contact.html?type=family">Book now</a></div>
-      <div class="plan reveal"><span class="name">Whole Tree</span><h3>50 gifts</h3><p class="who">Big families and the house everyone comes to</p><div class="price">$349</div><p class="per">free pickup &amp; delivery, Knoxville to Chattanooga</p><ul><li>Up to three palettes</li><li>Tags and note cards</li><li>Two pickups if you shop in rounds</li><li>First pick of dates</li></ul><a class="btn btn-gold" href="contact.html?type=family">Book now</a></div>
+      <div class="plan reveal"><span class="name">Whole Tree</span><h3>50 gifts</h3><p class="who">Large households and the home everyone gathers in</p><div class="price">$349</div><p class="per">free pickup &amp; delivery, Knoxville to Chattanooga</p><ul><li>Up to three palettes</li><li>Tags and note cards</li><li>Two pickups if you shop in rounds</li><li>First pick of dates</li></ul><a class="btn btn-gold" href="contact.html?type=family">Book now</a></div>
     </div>
     <p class="fineprint">Bundles assume a typical mix of small and medium gifts with a few large. Oversized items quoted separately. <a href="pricing.html">Full price list →</a></p>
   </div>
@@ -654,17 +653,17 @@ holiday_body = page_head("Holiday gift wrapping", "Christmas &amp; holiday gift 
 
 <section class="alt">
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">Beyond Christmas</span><h2>Every holiday on the calendar</h2></div>
+    <div class="section-head reveal"><span class="kicker">Year round</span><h2>Every holiday on the calendar</h2></div>
     <div class="grid grid-4">
       <div class="card reveal"><h3>Hanukkah</h3><p>Eight nights, eight gifts per person, blue-and-silver or your family's palette.</p></div>
       <div class="card reveal"><h3>Valentine's Day</h3><p>One perfect gift, luxe ribbon, handwritten card, ready before the 14th.</p></div>
-      <div class="card reveal"><h3>Mother's &amp; Father's Day</h3><p>Coordinated gifts from all the kids so nobody's looks like an afterthought.</p></div>
+      <div class="card reveal"><h3>Mother's &amp; Father's Day</h3><p>Coordinated gifts from every child, each one finished to the same standard.</p></div>
       <div class="card reveal"><h3>Easter &amp; graduation</h3><p>Baskets finished with cello and bows, graduation gifts wrapped in school colors.</p></div>
     </div>
   </div>
 </section>
 
-{cta_band("Reserve your holiday spot", "December dates go in order of booking. A 50% deposit holds yours. Quotes are free.", ("Book holiday wrapping", "contact.html?type=family"), ("Text " + PHONE, "sms:" + PHONE_TEL))}
+{cta_band("Reserve your holiday date", "December dates are confirmed in order of booking. A 50% deposit holds yours. Quotes are complimentary.", ("Book holiday wrapping", "contact.html?type=family"), ("Text " + PHONE, "sms:" + PHONE_TEL))}
 '''
 pages.append(dict(slug="holiday-gift-wrapping.html", crumb="Holiday gift wrapping",
   title="Christmas Gift Wrapping Service | Sweetwater, Knoxville & Chattanooga",
@@ -674,24 +673,24 @@ pages.append(dict(slug="holiday-gift-wrapping.html", crumb="Holiday gift wrappin
 
 # ABOUT
 about_body = page_head("About", f"Meet {OWNER.split()[0]}, the hands behind the bows",
-  f"{BIZ} is a home-based gift wrapping studio in {CITY}, Tennessee, run by one person who genuinely loves crisp corners and a full bow.", "About us") + f'''
+  f"{BIZ} is an owner-operated gift wrapping studio in {CITY}, Tennessee, built on a genuine love of crisp corners and a well-tied bow.", "About the studio") + f'''
 <section>
   <div class="wrap two-col">
     <div class="prose reveal">
       <h2 style="margin-top:0">A little about the studio</h2>
-      <p>Hi, I'm {OWNER}. I started {BIZ} because every December I was the person friends and family handed their gifts to. Somewhere between the third Christmas of wrapping for the whole street and the first office that asked me to do their client gifts, it turned into a business.</p>
-      <p>I work from a dedicated studio at home in {CITY}, right on I-75 between Knoxville and Chattanooga. That means I can pick up from a downtown Knoxville office in the morning and deliver to a Chattanooga party venue the same week. Every gift is wrapped by hand, by me, with paper and ribbon I've chosen because they hold a crease and tie a proper bow.</p>
+      <p>I'm {OWNER}. {BIZ} began because every December I was the person friends and family handed their gifts to. Somewhere between wrapping for the whole street and the first office that asked me to finish their client gifts, it became a business.</p>
+      <p>I work from a dedicated studio in {CITY}, on I-75 between Knoxville and Chattanooga, which means I can collect from a Knoxville office in the morning and deliver to a Chattanooga venue the same week. Every gift is wrapped by hand, by me, with paper and ribbon chosen because they hold a crease and tie a proper bow.</p>
       <h3>What I care about</h3>
       <ul>
         <li><strong>The details.</strong> Hidden tape, aligned patterns, bows that stay full through the car ride.</li>
         <li><strong>Your colors, not mine.</strong> Corporate orders match your brand. Family orders match your tree.</li>
-        <li><strong>Being easy to work with.</strong> Quick replies, clear pricing, and I show up when I say I will.</li>
+        <li><strong>Being easy to work with.</strong> Prompt replies, clear pricing and delivery when promised.</li>
       </ul>
-      <div class="callout"><span class="h">Fun fact.</span><p>The signature pink polka-dot ribbon on my business card is the same one I tie on the very first gift of every order. It's my way of signing the work.</p></div>
+      <div class="callout"><span class="h">The signature ribbon</span><p>The pink polka-dot ribbon from the business card is tied on the first gift of every order. Consider it a signature.</p></div>
     </div>
     <div class="reveal">
       <div class="gift-tile" style="background:#fde4ee;border-radius:26px">{gift_svg("#fff","#e5648f","#fff","#b23a5e","#fde4ee")}</div>
-      <p class="fineprint" style="text-align:center;margin-top:10px">Photo of {OWNER.split()[0]} and the studio coming soon.</p>
+      <p class="fineprint" style="text-align:center;margin-top:10px">Studio portrait to follow.</p>
     </div>
   </div>
 </section>
@@ -704,7 +703,7 @@ about_body = page_head("About", f"Meet {OWNER.split()[0]}, the hands behind the 
       <div class="card reveal"><div class="icon">{ICONS['truck']}</div><h3>North to Knoxville</h3><p>Maryville, Alcoa, Farragut, Oak Ridge, West Knoxville and downtown Knoxville. Pickup and delivery from $25 per trip.</p></div>
       <div class="card reveal"><div class="icon">{ICONS['truck']}</div><h3>South to Chattanooga</h3><p>Cleveland, Ooltewah, Hixson, East Ridge and downtown Chattanooga. Pickup and delivery from $25 per trip.</p></div>
     </div>
-    <p class="fineprint" style="text-align:center">Outside these areas? Ask. Larger corporate orders often justify the drive.</p>
+    <p class="fineprint" style="text-align:center">Outside these areas? Please ask. Larger corporate orders often justify the distance.</p>
   </div>
 </section>
 
@@ -712,15 +711,15 @@ about_body = page_head("About", f"Meet {OWNER.split()[0]}, the hands behind the 
   <div class="wrap">
     <div class="section-head reveal"><span class="kicker">Good to know</span><h2>How I work</h2></div>
     <div class="benefit-list">
-      <div class="benefit reveal"><div class="n">{ICONS['calendar']}</div><div><h3>By appointment</h3><p>Drop-offs and pickups are scheduled so I can give every order my full attention. Text or call to set a time.</p></div></div>
-      <div class="benefit reveal"><div class="n">{ICONS['shield']}</div><div><h3>Your gifts are safe</h3><p>Gifts are logged at intake, stored in a locked studio and returned with a checklist. Nothing gets lost in the shuffle.</p></div></div>
-      <div class="benefit reveal"><div class="n">{ICONS['eye']}</div><div><h3>Photo approvals</h3><p>Corporate orders get a photo mock-up before I wrap the batch. Families can request one too.</p></div></div>
-      <div class="benefit reveal"><div class="n">{ICONS['heart']}</div><div><h3>Local and personal</h3><p>You're working with the owner from first text to final delivery. No call center, no hand-offs.</p></div></div>
+      <div class="benefit reveal"><div class="n">{ICONS['calendar']}</div><div><h3>By appointment</h3><p>Drop-offs and pickups are scheduled so every order receives full attention. Call or text to arrange a time.</p></div></div>
+      <div class="benefit reveal"><div class="n">{ICONS['shield']}</div><div><h3>Your gifts are safe</h3><p>Gifts are logged at intake, stored in a secured studio and returned against a checklist.</p></div></div>
+      <div class="benefit reveal"><div class="n">{ICONS['eye']}</div><div><h3>Photo approvals</h3><p>Corporate orders receive a photographed sample before the batch is wrapped. Families may request one as well.</p></div></div>
+      <div class="benefit reveal"><div class="n">{ICONS['heart']}</div><div><h3>Local and personal</h3><p>You work with the owner from the first message to the final delivery.</p></div></div>
     </div>
   </div>
 </section>
 
-{cta_band("Let's talk about your gifts", "Whether it's one anniversary gift or a thousand client boxes, I'd love to hear about it.")}
+{cta_band("Let's talk about your gifts", "One anniversary gift or a thousand client boxes, I would be glad to hear about it.")}
 '''
 about_ld = f'''<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Person","name":"{OWNER}","jobTitle":"Owner & gift wrapper","worksFor":{{"@id":"{SITE}/#business"}},"email":"{EMAIL}","telephone":"{PHONE_TEL}","address":{{"@type":"PostalAddress","addressLocality":"{CITY}","addressRegion":"{REGION}","addressCountry":"US"}}}}</script>'''
 pages.append(dict(slug="about.html", crumb="About",
@@ -747,10 +746,10 @@ faqs = [
 faq_html = "".join(f'<details class="reveal"><summary>{esc(q)}</summary><div class="a"><p>{esc(a)}</p></div></details>' for q, a in faqs)
 import json as _j
 faq_ld = '<script type="application/ld+json">' + _j.dumps({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faqs]}, ensure_ascii=False) + '</script>'
-faq_body = page_head("FAQ", "Gift wrapping questions, answered", "Pricing, timing, pickup and delivery, odd shapes and everything else people ask before booking.", "FAQ") + f'''
+faq_body = page_head("FAQ", "Frequently asked questions", "Pricing, timing, pickup and delivery, unusual shapes and everything else clients ask before booking.", "FAQ") + f'''
 <section><div class="wrap"><div class="faq">{faq_html}</div>
-<p style="text-align:center;margin-top:30px;color:var(--ink-soft)">Still wondering something? <a href="contact.html"><strong>Ask us directly →</strong></a></p></div></section>
-{cta_band("Ready when you are", "Free quotes, quick replies and gifts that look like you meant it.")}
+<p style="text-align:center;margin-top:30px;color:var(--ink-soft)">Have another question? <a href="contact.html"><strong>Contact us directly →</strong></a></p></div></section>
+{cta_band("Ready when you are", "Complimentary quotes, prompt replies and gifts finished with care.")}
 '''
 pages.append(dict(slug="faq.html", crumb="FAQ",
   title="Gift Wrapping FAQ | All Wrapped Up, Sweetwater TN",
@@ -759,7 +758,7 @@ pages.append(dict(slug="faq.html", crumb="FAQ",
   ld=faq_ld, body=faq_body))
 
 # CONTACT
-contact_body = page_head("Contact", "Request a free gift wrapping quote", f"Tell us what you're wrapping and when you need it. Quotes usually come back within one business day. Prefer to talk? Call or text {PHONE}.", "Get a quote") + f'''
+contact_body = page_head("Contact", "Request a gift wrapping quote", f"Tell us what you are wrapping and when you need it. Quotes are returned within one business day. Prefer to talk? Call or text {PHONE}.", "Get a quote") + f'''
 <section>
   <div class="wrap contact-grid">
     <form class="form-card reveal" data-contact action="{FORM_ACTION}" method="POST">
@@ -786,7 +785,7 @@ contact_body = page_head("Contact", "Request a free gift wrapping quote", f"Tell
       <div class="field"><label for="c-pickup">Pickup &amp; delivery?</label><select id="c-pickup" name="pickup"><option>I'll drop off at the studio in Sweetwater</option><option>Please pick up and deliver</option><option>Ship gifts directly to you</option><option>Not sure yet</option></select></div>
       <div class="field"><label for="c-msg">Tell us about the gifts</label><textarea id="c-msg" name="message" rows="5" placeholder="Sizes, colors you love, brand colors, anything oversized, event details…"></textarea></div>
       <button class="btn btn-primary btn-lg btn-block" type="submit">Send my quote request</button>
-      <p class="form-note">Or <a href="#" data-mailto>open this in your email app</a> instead. We never share your information.</p>
+      <p class="form-note">Or <a href="#" data-mailto>open this request in your email app</a>. Your information is never shared.</p>
     </form>
     <aside class="info-card reveal">
       <h3>Reach {OWNER.split()[0]} directly</h3>
@@ -812,7 +811,7 @@ pages.append(dict(slug="contact.html", crumb="Contact",
 pages.append(dict(slug="thank-you.html", crumb="Thank you", noindex=True,
   title="Thanks! Your quote request is in | All Wrapped Up",
   desc="Your gift wrapping quote request has been received.",
-  body=page_head("Thank you", "Got it! Your request is on its way", f"We'll reply within one business day with pricing and next steps. Need it faster? Text {PHONE}.", "Thank you") + f'''
+  body=page_head("Thank you", "Your request has been received", f"We will reply within one business day with pricing and next steps. For anything urgent, text {PHONE}.", "Thank you") + f'''
 <section><div class="wrap" style="text-align:center"><div class="gift-tile reveal in" style="background:#fde4ee;width:220px;margin:0 auto 24px">{gift_svg("#fff","#e5648f","#fff","#b23a5e","#fde4ee")}</div>
 <a class="btn btn-primary" href="index.html">Back to the home page</a></div></section>'''))
 
@@ -820,7 +819,7 @@ pages.append(dict(slug="thank-you.html", crumb="Thank you", noindex=True,
 pages.append(dict(slug="404.html", crumb="Not found", noindex=True,
   title="Page not found | All Wrapped Up",
   desc="That page seems to have gone missing under the tree.",
-  body=page_head("Not found", "Hmm, that page got lost in the tissue paper", "The link may be old or mistyped. Here's the way back.", "404") + '''
+  body=page_head("Not found", "That page could not be found", "The link may be out of date or mistyped. Here is the way back.", "404") + '''
 <section><div class="wrap" style="text-align:center"><div class="hero-actions" style="justify-content:center"><a class="btn btn-primary" href="index.html">Home</a><a class="btn btn-secondary" href="pricing.html">Pricing</a><a class="btn btn-secondary" href="contact.html">Get a quote</a></div></div></section>'''))
 
 # ---------- write ----------
