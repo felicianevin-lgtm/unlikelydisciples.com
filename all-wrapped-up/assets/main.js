@@ -116,7 +116,7 @@
         e.preventDefault();
         var fd = new FormData(contactForm), lines = [];
         fd.forEach(function (v, k) { if (k.charAt(0) !== '_' && v) lines.push(k.replace(/_/g, ' ') + ': ' + v); });
-        location.href = 'mailto:abthearp@gmail.com?subject=' + encodeURIComponent('Gift wrapping quote request') + '&body=' + encodeURIComponent(lines.join('\n'));
+        location.href = 'mailto:' + (contactForm.getAttribute('data-mailto-to') || '') + '?subject=' + encodeURIComponent('Gift wrapping quote request') + '&body=' + encodeURIComponent(lines.join('\n'));
       });
     }
   }

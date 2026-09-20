@@ -36,12 +36,16 @@ If a different domain is chosen, change `SITE` at the top of `build.py` and the
 
 ## 3. Contact form (one-time activation)
 
-The quote form posts to FormSubmit (`https://formsubmit.co/abthearp@gmail.com`),
-which is free and needs no account. **The first submission from the live domain
-sends an activation email to abthearp@gmail.com — Amiebeth must click the link
-once.** After that, every quote request arrives as an email table, and the visitor
-lands on `thank-you.html`. A "open in your email app" fallback link is also on the
-form for anyone who prefers mailto.
+The quote form posts to FormSubmit, which is free and needs no account. Requests
+currently go to **Felicia** (`FORM_EMAIL` at the top of `build.py`) so Amiebeth
+receives nothing during setup and testing. **The first submission sends a one-time
+activation email to that address; click the link once.** Every request after that
+arrives as an email table and the visitor lands on `thank-you.html`.
+
+To hand the form to Amiebeth later: set `FORM_EMAIL = EMAIL` in `build.py`, run
+`python3 build.py`, push, then submit one test form so she gets (and clicks) her own
+activation email. The "open in your email app" fallback on the form follows the same
+setting.
 
 ## 4. SEO checklist after launch
 
