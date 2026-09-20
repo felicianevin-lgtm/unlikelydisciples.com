@@ -1,0 +1,20 @@
+{
+  "name": "All Wrapped Up \u2014 Ribbons & Bows",
+  "short_name": "All Wrapped Up",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fffdfa",
+  "theme_color": "#b23a5e",
+  "icons": [
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
